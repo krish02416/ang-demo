@@ -1,15 +1,16 @@
 name: Events Demo01
-on: 
-    push :
-       branches:
-         - main
-         paths:
-        - '.github/workflows/02*.yml'
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/02*.yml'
+
 jobs:
-    events-jobs:
-        runs-on: ubuntu-latest
-        steps:
-            -name: Print greeting 
-            run:  echo "hello world!"
-            -name: output event data 
-            run: echo "${{toJSON(github.event)}}"
+  events-jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print greeting 
+        run: echo "hello world!"
+      - name: Output event data 
+        run: echo "${{toJSON(github.event)}}"
